@@ -1,5 +1,15 @@
+const Authentication = require('./controllers/authentication');
+const Posts = require('./controllers/posts');
+
 module.exports = function(app) {
-    app.get('/', function(req, res, next) {
-        res.send(['dupa cycki']);
-    })
+    app.post('/signup', Authentication.signup);
+
+    app.get('/posts/:id', Posts.fetchPost);
+
+    app.post('/posts', Posts.createPost);
+
+    app.get('/posts', Posts.fetchPosts);
+
+    app.delete('/posts/:id', Posts.deletePost);
 }
+

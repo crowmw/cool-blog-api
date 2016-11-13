@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Shema
+const Schema = mongoose.Schema
 
 const postSchema = new Schema({
-    title: { type: String, unique:true, required: true},
-    text: { type: String, required: true },
-    tags: { type: Object, required: true }
+    title: { type: String, unique:true },
+    text: { type: String},
+    tags: { type: Object}
 },
 {
     timestamps: true
